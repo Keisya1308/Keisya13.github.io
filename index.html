@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorting Hat - Hogwarts</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #8e44ad;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #732d91;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 28px;
+      font-weight: bold;
+      transition: 0.4s;
+    }
+
+    .gryffindor {
+      color: #e74c3c;
+    }
+
+    .hufflepuff {
+      color: #f1c40f;
+    }
+
+    .ravenclaw {
+      color: #3498db;
+    }
+
+    .slytherin {
+      color: #2ecc71;
+    }
+
+    #hat {
+      font-size: 80px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hat">🎩</div>
+  <h1>Topi Seleksi Hogwarts</h1>
+  <p>Tekan tombol untuk mengetahui asramamu!</p>
+  <button onclick="sortMe()">🔮 Seleksi Sekarang</button>
+
+  <div id="result"></div>
+
+  <script>
+    const houses = [
+      { name: "Gryffindor", class: "gryffindor" },
+      { name: "Hufflepuff", class: "hufflepuff" },
+      { name: "Ravenclaw", class: "ravenclaw" },
+      { name: "Slytherin", class: "slytherin" }
+    ];
+
+    function sortMe() {
+      const resultDiv = document.getElementById("result");
+      const choice = houses[Math.floor(Math.random() * houses.length)];
+
+      resultDiv.innerHTML = `Kamu terpilih ke <span class="${choice.class}">${choice.name}</span>! 🧙‍♂️`;
+    }
+  </script>
+
+</body>
+</html>
